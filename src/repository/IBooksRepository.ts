@@ -8,6 +8,7 @@ interface IBooksRepositoryDTO {
 interface IBooksRepository {
   create({ name, description }: IBooksRepositoryDTO): void;
   list(): Book[];
+  findByName(name: string): Book;
 }
 
 export { IBooksRepository, IBooksRepositoryDTO };

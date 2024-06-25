@@ -29,6 +29,12 @@ class BooksRepository implements IBooksRepository {
     this.books.push(book);
   }
 
+  findByName(name: string): Book {
+    const bookAlreadyExists = this.books.find((book) => book.name === name);
+
+    return bookAlreadyExists;
+  }
+
   list() {
     return this.books;
   }

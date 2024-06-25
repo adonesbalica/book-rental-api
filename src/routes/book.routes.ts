@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { createBookController } from "../useCases/CreateBook";
 
 const booksRoutes = Router();
 
-booksRoutes.get("/", (req, res) => {
-  res.send("oi");
+booksRoutes.post("/", (req, res) => {
+  return createBookController.handle(req, res);
 });
 
 export { booksRoutes };

@@ -28,6 +28,10 @@ class BooksRepository implements IBooksRepository {
 
     this.books.push(book);
   }
+
+  list() {
+    return this.books;
+  }
 }
 
 export { BooksRepository };

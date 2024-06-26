@@ -38,6 +38,17 @@ class BooksRepository implements IBooksRepository {
   list() {
     return this.books;
   }
+
+  edit({ name, description, book }: IBooksRepositoryDTO): void {
+    const bookRequest = book;
+
+    this.books.find((book) => {
+      if (book.name === bookRequest) {
+        book.name = name;
+        book.description = description;
+      }
+    });
+  }
 }
 
 export { BooksRepository };

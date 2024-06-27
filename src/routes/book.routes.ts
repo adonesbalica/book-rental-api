@@ -5,7 +5,7 @@ import { editBookController } from "../useCases/EditBook";
 
 const booksRoutes = Router();
 
-booksRoutes.put("/:book", (req, res) => {
+booksRoutes.put("/", (req, res) => {
   return editBookController.handle(req, res);
 });
 

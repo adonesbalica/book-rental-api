@@ -6,7 +6,7 @@ class EditBookController {
 
   handle(req: Request, res: Response): Response {
     const { name, description } = req.body;
-    const { book } = req.params;
+    const { book } = req.query;
 
     this.editBookUseCase.execute({ name, description, book });
 

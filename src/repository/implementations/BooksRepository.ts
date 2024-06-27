@@ -49,6 +49,18 @@ class BooksRepository implements IBooksRepository {
       }
     });
   }
+
+  rent({ name, duration }: IBooksRepositoryDTO): void {
+    this.books.find((bookSaved) => {
+      if (bookSaved.name === name) {
+        Object.assign(bookSaved, {
+          duration,
+          isRent: true,
+        });
+      }
+    });
+  }
 }
 
 export { BooksRepository };
+

@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Book Rent API",
-    "description": "This is an API to rent a book",
+    "description": "This is an API to rent a book and and organize readings",
     "version": "1.0.0",
     "contact": "adones@gmail.com"
   },

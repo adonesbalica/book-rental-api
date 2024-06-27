@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Book Rent API",
+    "description": "This is an API to rent a book",
+    "version": "1.0.0",
+    "contact": "adones@gmail.com"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Book"],
+        "summary": "List all books",
+        "description": "List all books",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Book"],
+        "summary": "Create a book",
+        "description": "Create a new book",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "The Little Prince",
+                  "description": "The Little Prince is a classic tale of equal appeal to children and adults."
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "created"
+          },
+          "501": {
+            "description": "Category already exists"
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,13 +1,14 @@
 import express from "express";
 
-import { booksRoutes } from "./routes/book.routes";
+import { router } from "./routes";
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/", booksRoutes);
+app.use(router);
 
 app.listen(3333, () => {
   console.log("Server is running!");
 });
+
